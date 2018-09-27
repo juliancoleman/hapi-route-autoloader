@@ -16,7 +16,7 @@ const transformRoutes = routes => traverse(routes)
 const setUpRoutes = directory =>
   (server, options) => {
     const routes = requireAll(directory);
-    return server.route(transformRoutes(routes));
+    server.route(transformRoutes(routes));
   };
 
 module.exports = directory => ({
